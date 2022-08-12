@@ -1,0 +1,57 @@
+<p>details works!</p>
+<p>master works!</p>
+<div>
+  <h1> MASTER DETAILS</h1>
+</div>
+<style>
+  td {
+    padding: 25px;
+  }
+</style>
+<table>
+      <tr>
+    <td>
+      <div class="form-group">
+        <label>S.No</label>
+        <br />
+        <input type="text" id="serialNo" class="form-control" style="display: inline" [(ngModel)]="details.serialNo" />
+      </div>
+    </td>
+    <td>
+      <div class="dropdown-input">
+        <label>UNIT</label>
+        <br />
+        <select  [(ngModel)]="details.measure">
+          <option>Select</option>
+          <option *ngFor="let red of measures" [value]="red.name">
+            {{red.name}}
+          </option>
+        </select>
+      </div>
+    </td>
+    <td>
+      <div class="form-group">
+        <label>Particulars</label>
+        <br />
+        <input type="text" id="particulars" class="form-control" style="display: inline" [(ngModel)]="details.particulars" />
+      </div>
+    </td>
+    <td>
+      <div class="form-group">
+        <label>Quantity</label>
+        <br />
+        <input type="text" id="quantity" class="form-control" style="display: inline" [(ngModel)]="details.quantity" />
+      </div>
+    </td>
+    <td>
+      <div class="form-group">
+        <button type="button" class="btn btn-block btn-primary" (click)="onClick()"> ADD </button>
+      </div>
+    </td>
+     <td>
+      <div class="form-group">
+        <button type="button" class="btn btn-block btn-primary" (click)="onClear(details.serialNo)"> CLEAR </button>
+      </div>
+    </td> 
+  </tr>
+</table>

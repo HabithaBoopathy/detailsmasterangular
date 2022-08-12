@@ -1,0 +1,136 @@
+<p>master works!</p>
+<div>
+  <h1> MASTER DETAILS</h1>
+</div>
+<style>
+
+ .info-table td {
+    padding: 25px;
+  } 
+
+
+
+  table.table-result  {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table-result td, .table-result th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+
+</style>
+<table class="info-table">
+  <tr>
+    <td>
+      <div class="form-group">
+        <label>Master No</label>
+        <br />
+        <input type="text" id="masterNo" class="form-control"  value="1001" />
+      </div>
+    </td>
+    <td>
+      <div class="form-group">
+        <label>Date</label>
+        <br />
+        <input type="text" id="masterDate" class="form-control" style="display: inline" [(ngModel)]="master.masterDate" />
+      </div>
+    </td>
+
+
+    <td>
+      <div class="dropdown-input">
+        <label>STATUS</label>
+        <br />
+        <select  [(ngModel)]="master.black">
+          <option>Select</option>
+          <option *ngFor="let blue of blacks" [value]="blue.name">
+            {{blue.name}}
+          </option>
+        </select>
+      </div>
+    </td> 
+    <td>
+      <div class="form-group">
+        <label>Customer Name</label>
+        <br />
+        <input type="text" id="customerName" class="form-control" style="display: inline" [(ngModel)]="master.customerName" />
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="form-group">
+        <button type="button" class="btn btn-block btn-primary" (click)="onRegister()"> Save </button>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="form-group">
+        <label>S.No</label>
+        <br />
+        <input type="text" id="serialNo" class="form-control" style="display: inline" [(ngModel)]="details.serialNo" />
+      </div>
+    </td>
+    <td>
+      <div class="dropdown-input">
+        <label>UNIT</label>
+        <br />
+        <select  [(ngModel)]="details.measure">
+          <option>Select</option>
+          <option *ngFor="let red of measures" [value]="red.name">
+            {{red.name}}
+          </option>
+        </select>
+      </div>
+    </td>
+    <td>
+      <div class="form-group">
+        <label>Particulars</label>
+        <br />
+        <input type="text" id="particulars" class="form-control" style="display: inline" [(ngModel)]="details.particulars" />
+      </div>
+    </td>
+    <td>
+      <div class="form-group">
+        <label>Quantity</label>
+        <br />
+        <input type="text" id="quantity" class="form-control" style="display: inline" [(ngModel)]="details.quantity" />
+      </div>
+    </td>
+    <td>
+      <div class="form-group">
+        <button type="button" class="btn btn-block btn-primary" (click)="onClick()"> ADD </button>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<hr>
+<br/>
+<table class="table-result">
+<tr>
+  <th>S.No</th>
+  <th>Unit</th>
+  <th>Particulars</th>
+  <th>Quantity</th>
+  <th>     </th>
+  </tr>
+
+  <tr>
+    <td>{{details.serialNo}}</td>
+    <td>{{details.measure}}</td>
+    <td>{{details.particulars}}</td>
+    <td>{{details.quantity}}</td>
+    
+     <!-- <td>
+      <div class="form-group">
+        <button type="button" class="btn btn-block btn-primary" (click)="onClear()"> CLEAR </button>
+      </div>
+    </td>  -->
+  </tr>
+  </table>
